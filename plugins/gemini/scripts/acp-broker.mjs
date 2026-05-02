@@ -83,6 +83,7 @@ let activeClient = null;
 
 function spawnAcpProcess(cwd) {
   const child = spawn("gemini", ["--acp"], {
+    shell: true,
     cwd,
     stdio: ["pipe", "pipe", "pipe"],
     env: process.env

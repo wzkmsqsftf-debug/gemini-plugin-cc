@@ -134,7 +134,7 @@ export async function ensureBrokerSession(cwd, options = {}) {
   const pidFile = path.join(sessionDir, "broker.pid");
   const logFile = path.join(sessionDir, "broker.log");
 
-  const child = spawn("node", [
+  const child = spawn(process.execPath, [
     BROKER_SCRIPT,
     "serve",
     "--endpoint", endpoint,

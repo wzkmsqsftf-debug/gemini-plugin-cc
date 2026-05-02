@@ -698,7 +698,7 @@ async function runTaskInBackground(workspaceRoot, request) {
 
 function spawnBackgroundWorker(workspaceRoot, jobId) {
   const scriptPath = fileURLToPath(import.meta.url);
-  const child = spawn("node", [scriptPath, "task-worker", jobId], {
+  const child = spawn(process.execPath, [scriptPath, "task-worker", jobId], {
     cwd: workspaceRoot,
     detached: true,
     stdio: ["ignore", "ignore", "ignore"],

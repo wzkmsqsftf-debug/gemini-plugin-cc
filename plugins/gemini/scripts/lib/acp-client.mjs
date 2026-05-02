@@ -241,6 +241,7 @@ class SpawnedAcpClient extends AcpClientBase {
 
   async initialize() {
     this.proc = spawn("gemini", ["--acp"], {
+      shell: true,
       cwd: this.cwd,
       env: this.options.env ?? process.env,
       stdio: ["pipe", "pipe", "pipe"]
